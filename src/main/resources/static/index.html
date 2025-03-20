@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note-Taking App</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        input, button { margin: 5px; padding: 10px; }
+    </style>
+</head>
+<body>
+
+<h2>Simple Note-Taking App</h2>
+<input type="text" id="noteInput" placeholder="Enter your note">
+<button onclick="addNote()">Add Note</button>
+
+<h3>Notes:</h3>
+<ul id="notesList"></ul>
+
+<script>
+    function fetchNotes() {
+        fetch("http://localhost:8080/notes")
+            .then(response => response.json())
+            .then(data => {
+                let list = document.getElementById("notesList");
+                list.innerHTML = "";
+                data.forEach(note => {
+                    let li = document.createElement("li");
+                    li.textContent = note.content;
+                    list.appendChild(li);
+                });
+            });
+    }
+
+    function addNote() {
+        let noteInput = document.getElementById("noteInput").value;
+        fetch("http://localhost:8080/notes", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ content: noteInput })
+        }).then(() => {
+            document.getElementById("noteInput").value = "";
+            fetchNotes();
+        });
+    }
+
+    fetchNotes();
+</script>
+
+</body>
+</html>
