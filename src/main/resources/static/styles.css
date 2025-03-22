@@ -1,0 +1,118 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #3e4e5e;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    width: 80%;
+    max-width: 500px;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+#notes-list {
+    list-style-type: none;
+    width: 80%;
+    max-width: 500px;
+}
+
+#notes-list li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#notes-list li strong {
+    font-size: 1.2rem;
+    color: #4a4a4a;
+}
+
+#notes-list li button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+#notes-list li button:hover {
+    background-color: #c0392b;
+}
+
+#notes-list li button:focus {
+    outline: none;
+}
+
+#notes-list li button:nth-child(2) {
+    background-color: #f39c12;
+}
+
+#notes-list li button:nth-child(2):hover {
+    background-color: #e67e22;
+}
+
+#notes-list li button:nth-child(2):focus {
+    outline: none;
+}
+
+#notes-list li button:nth-child(2) {
+    margin-left: 5px;
+}
